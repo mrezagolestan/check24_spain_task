@@ -1,14 +1,16 @@
 <?php
 
 use App\FinanceAdsService;
+use App\Http\Controllers\CreditCardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return (new FinanceAdsService())->getCreditCardComparison();
-    exit();
     return view('welcome');
 });
+
+
+Route::get('/credit_cards', [CreditCardController::class, 'list']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
