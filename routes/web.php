@@ -11,6 +11,8 @@ Route::get('/', function () {
 
 
 Route::get('/credit_cards', [CreditCardController::class, 'list']);
+Route::get('/credit_cards/edit', [CreditCardController::class, 'edit']);
+Route::post('/credit_cards/edit', [CreditCardController::class, 'edit']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
