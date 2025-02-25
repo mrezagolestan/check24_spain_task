@@ -47,3 +47,8 @@ provision:
 	@echo "\033[92m ---------- Migrate ------------ \033[0m"
 	@docker compose -f $(COMPOSE_FILES) exec php php artisan migrate
 	@docker compose -f $(COMPOSE_FILES) exec php php artisan optimize:clear
+	@docker compose -f $(COMPOSE_FILES) exec php nvm use v20
+	@docker compose -f $(COMPOSE_FILES) exec php npm i
+	@docker compose -f $(COMPOSE_FILES) exec php npm run build
+
+
